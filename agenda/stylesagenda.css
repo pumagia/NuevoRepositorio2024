@@ -1,0 +1,40 @@
+ body {
+            background-color: #39393a;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card {
+            border-radius: 35px;
+        }
+
+        /* Estilos para el contenedor del calendario, asegurando que se adapte */
+        #calendar {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Estilos para los eventos de FullCalendar */
+        .fc-event {
+            background-color: #dc3545; /* Rojo de Bootstrap */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 2px 4px;
+            text-align: center;
+        }
+
+        /* Oculta el mensaje por defecto y usa flex para adaptarlo */
+        #message {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        /* Estilos para pantallas pequeñas (ej. móviles) */
+        @media (max-width: 768px) {
+            .card {
+                padding: 1rem !important; /* Ajusta el padding en pantallas pequeñas */
+            }
+        }
+ 
