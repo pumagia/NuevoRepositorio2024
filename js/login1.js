@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const seccionTestimonioDiv = document.getElementById('SeccioTestimonio');
     const testimonialForm = document.getElementById('testimonialForm');
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
+    const BACKEND_URL = 'https://loscardoscdu.onrender.com'; 
     
     // ... (El resto de tus listeners y funciones auxiliares) ...
     const carousels = document.querySelectorAll('.carousel');
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             email: loginEmailInput.value,
             clave: loginPasswordInput.value
         };
-        fetch('/auth/login', {
+        fetch('${BACKEND_URL}/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -144,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             credentialNotExpired: true,
             rolesList: [{ role_id: 1 }]
         };
-        fetch('/api/users', {
+        fetch('${BACKEND_URL}/api/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(registerData)
@@ -210,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             comenta: testimonialComentaInput.value,
             id_usuario: userId 
         };
-        fetch('/api/comentarios', {
+        fetch('${BACKEND_URL}/api/comentarios', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -253,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
             testimonioOpenButton.innerHTML = "Leer Testimonios";
             mostrarComentariosDiv.innerHTML = '';
         } else {
-            fetch('/api/comentarios')
+            fetch('${BACKEND_URL}/api/comentarios')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error al obtener los comentarios.');
