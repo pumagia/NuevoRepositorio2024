@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             credentialNotExpired: true,
             rolesList: [{ role_id: 1 }]
         };
-        fetch('${BACKEND_URL}/api/users', {
+        fetch('https://loscardoscdu.onrender.com/api/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(registerData)
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             comenta: testimonialComentaInput.value,
             id_usuario: userId 
         };
-        fetch('${BACKEND_URL}/api/comentarios', {
+        fetch('https://loscardoscdu.onrender.com/api/comentarios', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
             testimonioOpenButton.innerHTML = "Leer Testimonios";
             mostrarComentariosDiv.innerHTML = '';
         } else {
-            fetch('${BACKEND_URL}/api/comentarios')
+            fetch(${BACKEND_URL}'/api/comentarios')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error al obtener los comentarios.');

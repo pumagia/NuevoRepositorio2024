@@ -1,5 +1,5 @@
 /* ==================================== */
-/* 📂 VARIABLES Y ESTILOS GLOBALES     */
+/*  VARIABLES Y ESTILOS GLOBALES     */
 /* ==================================== */
 :root {
     --color-primary-gray: #4a4a4a; 
@@ -20,7 +20,7 @@ body {
 }
 
 /* ==================================== */
-/* 🧭 NAVEGACIÓN (NAVBAR)                */
+/* NAVEGACIÓN (NAVBAR)                */
 /* ==================================== */
 .navbar {
     background-color: var(--color-primary-gray);
@@ -36,7 +36,7 @@ body {
 }
 
 /* ==================================== */
-/* 🖼️ SECCIÓN PRINCIPAL (HERO)            */
+/* SECCIÓN PRINCIPAL (HERO)            */
 /* ==================================== */
 .hero-section {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ruta/a/tu/imagen.jpg'); 
@@ -60,7 +60,7 @@ body {
 }
 
 /* ==================================== */
-/* 💳 TARJETAS Y BOTONES (CARDS & BUTTONS) */
+/* TARJETAS Y BOTONES (CARDS & BUTTONS) */
 /* ==================================== */
 .section-title {
     color: var(--color-dark-gray);
@@ -176,7 +176,7 @@ body {
 }
 
 /* ==================================== */
-/* 🗣️ TESTIMONIOS (CAROUSEL)            */
+/* TESTIMONIOS (CAROUSEL)            */
 /* ==================================== */
 .carousel-container {
     width: 100%;
@@ -198,7 +198,7 @@ body {
 }
 
 /* ==================================== */
-/* 📍 MAPA Y UBICACIÓN                    */
+/*  MAPA Y UBICACIÓN                    */
 /* ==================================== */
 .mapa-responsive {
     position: relative;
@@ -216,7 +216,7 @@ body {
 }
 
 /* ==================================== */
-/* 🦶 PIE DE PÁGINA (FOOTER)             */
+/* PIE DE PÁGINA (FOOTER)             */
 /* ==================================== */
 .footer {
     background-color: var(--color-black-footer);
@@ -236,7 +236,7 @@ body {
 }
 
 /* ==================================== */
-/* 🔒 MODALES DE AUTENTICACIÓN          */
+/*  MODALES DE AUTENTICACIÓN          */
 /* ==================================== */
 .auth-overlay {
     position: fixed;
@@ -305,7 +305,7 @@ body {
     color: var(--color-dark-gray);
 }
 /* ==================================== */
-/* 🔔 MODAL DE MENSAJES                  */
+/* MODAL DE MENSAJES                  */
 /* ==================================== */
 #messageModal .modal-content {
     background-color: #e0e0e0; 
@@ -348,7 +348,7 @@ body {
 }
 
 /* ==================================== */
-/* 📱 MEDIA QUERIES PARA RESPONSIVE    */
+/*  MEDIA QUERIES PARA RESPONSIVE    */
 /* ==================================== */
 @media (max-width: 768px) {
     .hero-section h1 {
