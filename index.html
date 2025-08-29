@@ -10,7 +10,7 @@
    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="csstyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 
 </head>
@@ -91,11 +91,17 @@
                 </div>
             </div>
 
+
+
+ <div class="main_content_container" >
+           
             <div id="SeccioTestimonio" style="display:none;">
+                <div class="user-card">
                 <div class="card-body p-4">
                     <form id="testimonialForm" class="needs-validation" novalidate>
                         <div class="mb-3">
-                            <label for="testimonial_comenta" class="form-label">Tu Testimonio</label>
+                            
+                            <p class="user-bio">Tu Testimonio</p>
                             <textarea class="form-control" id="testimonial_comenta" rows="3" required></textarea>
                             <div class="invalid-feedback">
                                 Por favor, escribe tu testimonio.
@@ -106,18 +112,29 @@
                         </div>
                     </form>
                 </div>
+                </div>
             </div>
 
 
             <div id="loggedInSection" style="display:none;">
-                <button id="addCommentBtn" class="btn btn-primary">Agregar Testimonios y Opiniones</button>
-                <a href="/agenda/index_agenda.html">
-                    <button id="agendaBtn" class="btn btn-dark">Acceso a la Agenda</button>
-                </a>
-                <button id="endSectionBtn" class="btn btn-danger">Fin de Sección</button>
+                <div class="user-card">
+                 
+                    <p class="user-bio">Panel del Usuario</p>
+
+
+
+                        <button id="addCommentBtn" class="btn btn-primary">Agregar Testimonios y Opiniones</button>
+                            <br> <br>
+                        <a href="/agenda/index_agenda.html">
+                            <button id="agendaBtn" class="btn btn-dark">Acceso a la Agenda</button>
+                        </a>
+                            <br>     <br>                  
+                        <button id="endSectionBtn" class="btn btn-danger">Fin de Sección</button>
+                </div>
+
             </div>
 
-
+  </div>
 
 
 
@@ -270,14 +287,14 @@
                    
                     <div class="carousel-item active">
                       
-                        <img src="fotosatio/WhatsApp%20Image%202025-07-04%20at%2020.10.22.jpeg" class="d-block w-100"
+                        <img src="/fotos/patio/WhatsApp Image 2025-07-04 at 20.10.22.jpeg" class="d-block w-100"
                              alt="Primera imagen del carrusel">
                     
                     </div>
 
                  
                     <div class="carousel-item">
-                        <img src="fotosatio/WhatsApp%20Image%202025-07-04%20at%2020.10.22.jpeg" class="d-block w-100"
+                        <img src="/fotos/patio/WhatsApp Image 2025-07-04 at 20.10.22.jpeg" class="d-block w-100"
                              alt="Segunda imagen del carrusel">
                         <div class="carousel-caption d-none d-md-block">
                             <h5 class="text-justify"> Sumérgete en la tranquilidad de Los Cardos CdelU, tu casa de campo
@@ -390,28 +407,28 @@
                               
                                 <div class="carousel-item active">
                                   
-                                    <img src="fotosomedor.jpeg" class="d-block w-100"
+                                    <img src="/fotos/comedor.jpeg" class="d-block w-100"
                                          alt="Primera imagen del carrusel">
                               
                                 </div>
 
                                
                                 <div class="carousel-item">
-                                    <img src="fotosocina.jpeg" class="d-block w-100"
+                                    <img src="/fotos/cocina.jpeg" class="d-block w-100"
                                          alt="Segunda imagen del carrusel">
 
                                 </div>
 
                            
                                 <div class="carousel-item">
-                                    <img src="fotosaño.jpeg" class="d-block w-100"
+                                    <img src="/fotos/baño.jpeg" class="d-block w-100"
                                          alt="Tercera imagen del carrusel">
 
                                 </div>
 
                             
                                 <div class="carousel-item">
-                                    <img src="fotosaño.jpeg" class="d-block w-100"
+                                    <img src="/fotos/baño1.jpeg" class="d-block w-100"
                                          alt="Tercera imagen del carrusel">
 
                                 </div>
@@ -462,8 +479,7 @@
                                         aria-label="Diapositiva 2"></button>
                                 <button type="button" data-bs-target="#miCarrusel2" data-bs-slide-to="2"
                                         aria-label="Diapositiva 3"></button>
-                                <button type="button" data-bs-target="#miCarrusel2" data-bs-slide-to="3"
-                                        aria-label="Diapositiva 4"></button>
+                             
                             </div>
 
                          
@@ -471,7 +487,7 @@
 
                                 <div class="carousel-item active">
                                 
-                                    <img src="fotosileta/WhatsApp%20Image%202025-07-04%20at%2020.11.36.jpeg"
+                                    <img src="/fotos/pileta/WhatsApp%20Image%202025-07-04%20at%2020.11.36.jpeg"
                                          class="d-block w-100" alt="Primera imagen del carrusel">
                                     <div class="carousel-caption d-none d-md-block">
                                     
@@ -480,23 +496,19 @@
 
                            
                                 <div class="carousel-item">
-                                    <img src="fotosatio/WhatsApp%20Image%202025-07-04%20at%2020.12.42.jpeg"
+                                    <img src="/fotos/pileta/WhatsApp Image 2025-07-04 at 20.12.24.jpeg"
                                          class="d-block w-100" alt="Segunda imagen del carrusel">
 
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="fotosileta/WhatsApp%20Image%202025-07-04%20at%2020.12.24.jpeg"
+                                    <img src="/fotos/pileta/WhatsApp Image 2025-07-04 at 20.13.03.jpeg"
                                          class="d-block w-100" alt="Tercera imagen del carrusel">
 
                                 </div>
 
                            
-                                <div class="carousel-item">
-                                    <img src="fotosileta/WhatsApp%20Image%202025-07-04%20at%2020.13.03.jpeg"
-                                         class="d-block w-100" alt="Tercera imagen del carrusel">
-
-                                </div>
+                             
 
                             </div>
                           
@@ -553,7 +565,7 @@
                              
                                 <div class="carousel-item active">
                                   
-                                    <img src="fotosabitacion/WhatsApp%20Image%202025-07-04%20at%2020.08.50.jpeg"
+                                    <img src="/fotos/habitacion/WhatsApp%20Image%202025-07-04%20at%2020.08.50.jpeg"
                                          class="d-block w-100" alt="Primera imagen del carrusel">
                                     <div class="carousel-caption d-none d-md-block">
                                     
@@ -562,21 +574,21 @@
 
                              
                                 <div class="carousel-item">
-                                    <img src="fotosabitacion/WhatsApp%20Image%202025-07-04%20at%2020.09.10.jpeg"
+                                    <img src="/fotos/habitacion/WhatsApp%20Image%202025-07-04%20at%2020.09.10.jpeg"
                                          class="d-block w-100" alt="Segunda imagen del carrusel">
 
                                 </div>
 
                            
                                 <div class="carousel-item">
-                                    <img src="fotosabitacion/WhatsApp%20Image%202025-07-04%20at%2020.09.30.jpeg"
+                                    <img src="/fotos/habitacion/WhatsApp%20Image%202025-07-04%20at%2020.09.30.jpeg"
                                          class="d-block w-100" alt="Tercera imagen del carrusel">
 
                                 </div>
 
                            
                                 <div class="carousel-item">
-                                    <img src="fotosabitacion/WhatsApp%20Image%202025-07-04%20at%2020.09.52.jpeg"
+                                    <img src="/fotos/habitacion/WhatsApp%20Image%202025-07-04%20at%2020.09.52.jpeg"
                                          class="d-block w-100" alt="Tercera imagen del carrusel">
 
                                 </div>

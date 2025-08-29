@@ -1,35 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  
+    // ... (Tu código de declaración de variables) ...
     const authContainer = document.getElementById('authContainer');
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     const openAuthButton = document.getElementById('openAuthModal');
     const showRegisterLink = document.getElementById('showRegisterLink');
     const showLoginLink = document.getElementById('showLoginLink');
-    
     const loginEmailInput = document.getElementById('loginEmail');
     const loginPasswordInput = document.getElementById('loginPassword');
     const testimonioOpenButton = document.getElementById('testimonio_open');
     const mostrarComentariosDiv = document.getElementById('mostrarcomentarios');
-
-   
     const loggedInSection = document.getElementById('loggedInSection');
     const addCommentBtn = document.getElementById('addCommentBtn');
     const agendaBtn = document.getElementById('agendaBtn');
     const endSectionBtn = document.getElementById('endSectionBtn');
-
     const messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
     const messageModalLabel = document.getElementById('messageModalLabel');
     const messageModalBody = document.getElementById('messageModalBody');
-
     const seccionTestimonioDiv = document.getElementById('SeccioTestimonio');
     const testimonialForm = document.getElementById('testimonialForm');
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
-
-
-  
-
+    
+    // ... (El resto de tus listeners y funciones auxiliares) ...
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
         new bootstrap.Carousel(carousel, {
@@ -37,50 +29,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-  
     const showLoginForm = () => {
         loginForm.hidden = false;
         registerForm.hidden = true;
         authContainer.hidden = false;
     };
 
-    
     const showRegisterForm = () => {
         loginForm.hidden = true;
         registerForm.hidden = false;
         authContainer.hidden = false;
     };
 
-   
     const hideAuthContainer = () => {
         authContainer.hidden = true;
     };
 
-    /**
-     * Muestra un modal con un mensaje y un título.
-     * @param {string} title El título del modal.
-     * @param {string} message El texto del mensaje a mostrar.
-     */
     const showMessageModal = (title, message) => {
         messageModalLabel.textContent = title;
         messageModalBody.textContent = message;
         messageModal.show();
     };
 
-    
     const showLoggedInSection = () => {
         hideAuthContainer();
         openAuthButton.style.display = 'none'; 
         loggedInSection.style.display = 'block'; 
     };
 
-    
     const hideLoggedInSection = () => {
         loggedInSection.style.display = 'none';
         openAuthButton.style.display = 'block'; 
     };
 
-  
     openAuthButton.addEventListener('click', (event) => {
         event.preventDefault();
         if (authContainer.hidden) {
@@ -95,13 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
         showRegisterForm();
     });
 
-   
     showLoginLink.addEventListener('click', (event) => {
         event.preventDefault();
         showLoginForm();
     });
 
-   
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
         if (!loginForm.checkValidity()) {
@@ -109,12 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             loginForm.classList.add('was-validated');
             return;
         }
-
         const loginData = {
             email: loginEmailInput.value,
             clave: loginPasswordInput.value
         };
-
         fetch('/auth/login', {
             method: 'POST',
             headers: {
@@ -133,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             console.log('Respuesta completa del servidor:', data);
             const { message, jwt, status, id_usuario } = data;
-
             if (status === true) {
                 showMessageModal('Éxito',  '¡Inicio de sesión exitoso!');
                 localStorage.setItem('jwtToken', jwt);
@@ -149,16 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-  
     registerForm.addEventListener('submit', (event) => {
         event.preventDefault();
-
         if (!registerForm.checkValidity()) {
             event.stopPropagation();
             registerForm.classList.add('was-validated');
             return;
         }
-
         const registerData = {
             nombreyapellido: document.getElementById('register-nombreyapellido').value,
             clave: document.getElementById('register-clave').value,
@@ -171,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
             credentialNotExpired: true,
             rolesList: [{ role_id: 1 }]
         };
-
         fetch('/api/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -199,54 +171,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-  
-
     addCommentBtn.addEventListener('click', () => {
-       
-        seccionTestimonioDiv.style.display = 'block';
-
-        
-        mostrarComentariosDiv.style.display = 'none';
-
-       
-        if (testimonioOpenButton) {
-            testimonioOpenButton.innerHTML = "Regresar a comentarios";
+        if (seccionTestimonioDiv.style.display === 'block' || seccionTestimonioDiv.style.display === '') {
+            seccionTestimonioDiv.style.display = 'none';
+            addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones';
+        } else {
+            seccionTestimonioDiv.style.display = 'block';
+            addCommentBtn.innerHTML = 'Cerrar Panel de Testimonio y Opiniones';
+            testimonialComentaInput.value = ''; 
         }
     });
 
-
-
     endSectionBtn.addEventListener('click', () => {
         hideLoggedInSection();
+        seccionTestimonioDiv.style.display = 'none';
+        addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones';
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('userId');
         console.log('Has cerrado la sesión');
         showMessageModal('Cierre de Sesión', 'Has cerrado la sesión correctamente.');
     });
 
-   
     testimonialForm.addEventListener('submit', (event) => {
         event.preventDefault();
-
         const token = localStorage.getItem('jwtToken');
         const userId = localStorage.getItem('userId');
-
         if (!token || !userId) {
             showMessageModal('Error de Autenticación', 'Por favor, inicia sesión para enviar un testimonio.');
+            
             return;
         }
-
         if (!testimonialForm.checkValidity()) {
             event.stopPropagation();
             testimonialForm.classList.add('was-validated');
             return;
         }
-
         const testimonialData = {
             comenta: testimonialComentaInput.value,
             id_usuario: userId 
         };
-
         fetch('/api/comentarios', {
             method: 'POST',
             headers: {
@@ -259,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 return response.json().then(errorData => {
                     throw new Error(errorData.message || 'Error al enviar el testimonio.');
+                    
                 });
             }
             return response.json();
@@ -266,22 +230,22 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             if (data && data.id_comentario) {
                 showMessageModal('Éxito', '¡Tu testimonio ha sido enviado con éxito!');
-             
+                seccionTestimonioDiv.style.display = 'none';
+                addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones'; 
                 console.log('enviado:', testimonialData);
                 testimonialForm.reset();
                 testimonialForm.classList.remove('was-validated');
             } else {
                 showMessageModal('Error', 'No se pudo enviar el testimonio. Inténtalo de nuevo.');
+                
             }
         })
         .catch(error => {
             console.error('Error al enviar el testimonio:', error);
             showMessageModal('Error', error.message || 'Error de conexión al enviar el testimonio.');
+            
         });
     });
-
-
- 
 
     testimonioOpenButton.addEventListener('click', () => {
         if (mostrarComentariosDiv.style.display === 'block') {
