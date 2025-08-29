@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             email: loginEmailInput.value,
             clave: loginPasswordInput.value
         };
-        fetch('${BACKEND_URL}/auth/login', {
+        fetch('https://loscardoscdu.onrender.com/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
