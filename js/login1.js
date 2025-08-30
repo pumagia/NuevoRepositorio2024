@@ -208,8 +208,12 @@ irCalendarioBtn.addEventListener('click', (event) => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(registerData)
+            
         })
         .then(response => {
+            console.log(registerData);
+            console.log('Respuesta del servidor:', response);
+             
             if (!response.ok) {
                 return response.json().then(errorData => {
                    throw new Error( 'Error al registrar la cuenta.');
