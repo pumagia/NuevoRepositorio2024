@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         registerForm.hidden = true;
         authContainer.hidden = false;
         loginFormForm.reset();
+        window.scrollTo(0, 0); 
     };
 
     
