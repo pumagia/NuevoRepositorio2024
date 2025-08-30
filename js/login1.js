@@ -181,15 +181,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Evento del botón para agregar comentarios
+    // Evento del botón para agregar comentarios (CORREGIDO)
     addCommentBtn.addEventListener('click', () => {
-        if (seccionTestimonioDiv.style.display === 'block' || seccionTestimonioDiv.style.display === '') {
-            seccionTestimonioDiv.style.display = 'none';
-            addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones';
-        } else {
+        if (seccionTestimonioDiv.style.display === 'none' || seccionTestimonioDiv.style.display === '') {
             seccionTestimonioDiv.style.display = 'block';
             addCommentBtn.innerHTML = 'Cerrar Panel de Testimonio y Opiniones';
             testimonialComentaInput.value = '';
+        } else {
+            seccionTestimonioDiv.style.display = 'none';
+            addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones';
         }
     });
 
