@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialForm = document.getElementById('testimonialForm');
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
     const BACKEND_URL = 'https://loscardoscdu.onrender.com';
+    const mainContentContainer = document.querySelector('.main_content_container');
 
 
   
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideAuthContainer();
         openAuthButton.style.display = 'none'; 
         loggedInSection.style.display = 'block'; 
+        
     };
 
     
@@ -139,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 showMessageModal('Éxito',  '¡Inicio de sesión exitoso!');
                 localStorage.setItem('jwtToken', jwt);
                 localStorage.setItem('userId', id_usuario);
+                mainContentContainer.style.display = 'block';
                 showLoggedInSection(); 
             } else {
                 showMessageModal('Error',  'Inicio de sesión fallido. Por favor, revisa tus credenciales.');
