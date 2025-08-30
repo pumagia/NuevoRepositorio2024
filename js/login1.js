@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
     const BACKEND_URL = 'https://loscardoscdu.onrender.com';
     const mainContentContainer = document.querySelector('.main_content_container');
+    const irCalendarioBtn = document.getElementById('ircalendario');
 
 
   
@@ -39,11 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-  
+   if (irCalendarioBtn) {
+        irCalendarioBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+           
+            showLoginForm();
+        });
+    }
+
+
+
     const showLoginForm = () => {
         loginForm.hidden = false;
         registerForm.hidden = true;
         authContainer.hidden = false;
+        loginFormForm.reset();
     };
 
     
@@ -51,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.hidden = true;
         registerForm.hidden = false;
         authContainer.hidden = false;
+        registerForm.reset();
     };
 
    
