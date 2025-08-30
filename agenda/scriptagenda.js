@@ -77,19 +77,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+const displayOccupiedDatesOnCalendar = (occupiedDatesArray) => {
+    const events = occupiedDatesArray.map((date) => {
+        
+        const endDate = new Date(date.end);
 
-    const displayOccupiedDatesOnCalendar = (occupiedDatesArray) => {
-        const events = occupiedDatesArray.map((date) => ({
+        endDate.setDate(endDate.getDate() + 1);
+
+        return {
             id: date.id,
             title: date.userId == currentUser ? 'Mi Reserva' : 'Reservado',
             start: date.start,
-            end: date.end,
+            end: endDate.toISOString().slice(0, 10),
             color: date.id == selectedEventId ? '#ffe066' : '#eb838d'
-        }));
-        calendar.removeAllEvents();
-        calendar.addEventSource(events);
-        calendar.render();
-    };
+        };
+    });
+    calendar.removeAllEvents();
+    calendar.addEventSource(events);
+    calendar.render();
+};
 
     const isOverlapping = (newStart, newEnd) => {
         for (const occupied of occupiedDates) {
