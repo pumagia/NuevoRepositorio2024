@@ -230,6 +230,9 @@ addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('userId');
         console.log('Has cerrado la sesión');
+        seccionTestimonioDiv.style.display = 'none';
+        addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
+        mainContentContainer.style.display = 'none';
         showMessageModal('Cierre de Sesión', 'Has cerrado la sesión correctamente.');
     });
 

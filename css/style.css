@@ -358,3 +358,8 @@ body {
         font-size: 1rem;
     }
 }
+.main_content_container {
+justify-content: center;
+    align-items: center;
+
+}
