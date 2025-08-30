@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startDateInput = document.getElementById('startDate');
     const endDateInput = document.getElementById('endDate');
     const cancelDiv = document.createElement('div');
+    const BACKEND_URL2 = 'https://loscardoscdu.onrender.com';
     cancelDiv.className = 'mt-3 text-center';
     calendarEl.parentNode.insertBefore(cancelDiv, calendarEl.nextSibling);
 
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                     cancelDiv.querySelector('button').onclick = () => {
                         // Lógica para cancelar reserva
-                        fetch(`/api/agendas/${selectedEventId}`, {
+                        fetch(`${BACKEND_URL2}/api/agendas/${selectedEventId}`, {
                             method: 'DELETE',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -152,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // 3. Enviar al servidor usando `fetch`
-        fetch('/api/agendas', {
+        fetch(`${BACKEND_URL2}/api/agendas`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -178,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Lógica para obtener reservas existentes del servidor (ya estaba en tu código)
-    fetch('/api/agendas', {
+    fetch(`${BACKEND_URL2}/api/agendas`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
