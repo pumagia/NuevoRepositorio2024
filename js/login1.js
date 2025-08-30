@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-   if (irCalendarioBtn) {
-        irCalendarioBtn.addEventListener('click', (event) => {
+if (irCalendarioBtn && inicioDeTodo) {
+           irCalendarioBtn.addEventListener('click', (event) => {
             event.preventDefault();
             showLoginForm();
             inicioDeTodo.scrollIntoView({
