@@ -68,7 +68,8 @@ irCalendarioBtn.addEventListener('click', (event) => {
         loginForm.hidden = false;
         registerForm.hidden = true;
         authContainer.hidden = false;
-        loginFormForm.reset();
+        loginForm.reset();
+        window.scrollTo(0, 0); 
         
     };
 
