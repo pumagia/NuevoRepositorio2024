@@ -214,11 +214,8 @@ addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
             seccionTestimonioDiv.style.display = 'block';
             addCommentBtn.innerHTML = "Cerrar Panel de Testimonio y Opiniones";}
 
-
-        }
       //  seccionTestimonioDiv.style.display = 'block';
 
-        
       //  mostrarComentariosDiv.style.display = 'none';
 
        // if (testimonioOpenButton) {
