@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (Tu código de declaración de variables) ...
+    // Declaración de variables
     const authContainer = document.getElementById('authContainer');
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const seccionTestimonioDiv = document.getElementById('SeccioTestimonio');
     const testimonialForm = document.getElementById('testimonialForm');
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
-    const BACKEND_URL = 'https://loscardoscdu.onrender.com'; 
-    
-    // ... (El resto de tus listeners y funciones auxiliares) ...
+    const BACKEND_URL = 'https://loscardoscdu.onrender.com';
+
+    // Inicialización de carruseles de Bootstrap
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
         new bootstrap.Carousel(carousel, {
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Funciones auxiliares
     const showLoginForm = () => {
         loginForm.hidden = false;
         registerForm.hidden = true;
@@ -54,15 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const showLoggedInSection = () => {
         hideAuthContainer();
-        openAuthButton.style.display = 'none'; 
-        loggedInSection.style.display = 'block'; 
+        openAuthButton.style.display = 'none';
+        loggedInSection.style.display = 'block';
     };
 
     const hideLoggedInSection = () => {
         loggedInSection.style.display = 'none';
-        openAuthButton.style.display = 'block'; 
+        openAuthButton.style.display = 'block';
     };
 
+    // Listeners de eventos
     openAuthButton.addEventListener('click', (event) => {
         event.preventDefault();
         if (authContainer.hidden) {
@@ -82,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showLoginForm();
     });
 
+    // Evento de envío del formulario de login (CORREGIDO)
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
         if (!loginForm.checkValidity()) {
@@ -93,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             email: loginEmailInput.value,
             clave: loginPasswordInput.value
         };
-        fetch('https://loscardoscdu.onrender.com/auth/login', {
+        fetch(`${BACKEND_URL}/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -101,31 +104,37 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(loginData)
         })
         .then(response => {
+            // Maneja respuestas que no sean "ok" (códigos 4xx, 5xx)
             if (!response.ok) {
                 return response.json().then(errorData => {
-                    throw new Error( 'Error en el inicio de sesión.');
+                    throw new Error(errorData.message || 'Error en el inicio de sesión. Por favor, revisa tus credenciales.');
                 });
             }
+            // Si la respuesta es "ok", procesa los datos JSON
             return response.json();
         })
         .then(data => {
             console.log('Respuesta completa del servidor:', data);
-            const { message, jwt, status, id_usuario } = data;
-            if (status === true) {
-                showMessageModal('Éxito',  '¡Inicio de sesión exitoso!');
+            // Verifica que el servidor devolvió el token y el ID de usuario
+            const { jwt, id_usuario } = data;
+            if (jwt && id_usuario) {
+                showMessageModal('Éxito', '¡Inicio de sesión exitoso!');
                 localStorage.setItem('jwtToken', jwt);
                 localStorage.setItem('userId', id_usuario);
-                showLoggedInSection(); 
+                showLoggedInSection();
             } else {
-                showMessageModal('Error',  'Inicio de sesión fallido. Por favor, revisa tus credenciales.');
+                // Si la respuesta "ok" no contiene los datos esperados
+                showMessageModal('Error', 'Inicio de sesión fallido. Por favor, revisa tus credenciales.');
             }
         })
         .catch(error => {
+            // Captura errores de red o errores lanzados en los `.then`
             console.error('Ha ocurrido un error durante la petición:', error);
-            showMessageModal('Error de Conexión',  'No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.');
+            showMessageModal('Error de Conexión', error.message || 'No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.');
         });
     });
 
+    // Evento de envío del formulario de registro
     registerForm.addEventListener('submit', (event) => {
         event.preventDefault();
         if (!registerForm.checkValidity()) {
@@ -145,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             credentialNotExpired: true,
             rolesList: [{ role_id: 1 }]
         };
-        fetch('https://loscardoscdu.onrender.com/api/users', {
+        fetch(`${BACKEND_URL}/api/users`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(registerData)
@@ -153,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => {
             if (!response.ok) {
                 return response.json().then(errorData => {
-                   throw new Error( 'Error al registrar la cuenta.');
+                   throw new Error(errorData.message || 'Error al registrar la cuenta.');
                 });
             }
             return response.json();
@@ -172,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Evento del botón para agregar comentarios
     addCommentBtn.addEventListener('click', () => {
         if (seccionTestimonioDiv.style.display === 'block' || seccionTestimonioDiv.style.display === '') {
             seccionTestimonioDiv.style.display = 'none';
@@ -179,10 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             seccionTestimonioDiv.style.display = 'block';
             addCommentBtn.innerHTML = 'Cerrar Panel de Testimonio y Opiniones';
-            testimonialComentaInput.value = ''; 
+            testimonialComentaInput.value = '';
         }
     });
 
+    // Evento del botón para cerrar sesión
     endSectionBtn.addEventListener('click', () => {
         hideLoggedInSection();
         seccionTestimonioDiv.style.display = 'none';
@@ -193,13 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
         showMessageModal('Cierre de Sesión', 'Has cerrado la sesión correctamente.');
     });
 
+    // Evento de envío del formulario de testimonio
     testimonialForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const token = localStorage.getItem('jwtToken');
         const userId = localStorage.getItem('userId');
         if (!token || !userId) {
             showMessageModal('Error de Autenticación', 'Por favor, inicia sesión para enviar un testimonio.');
-            
             return;
         }
         if (!testimonialForm.checkValidity()) {
@@ -209,13 +220,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const testimonialData = {
             comenta: testimonialComentaInput.value,
-            id_usuario: userId 
+            id_usuario: userId
         };
-        fetch('https://loscardoscdu.onrender.com/api/comentarios', {
+        fetch(`${BACKEND_URL}/api/comentarios`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}` 
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(testimonialData)
         })
@@ -223,7 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 return response.json().then(errorData => {
                     throw new Error(errorData.message || 'Error al enviar el testimonio.');
-                    
                 });
             }
             return response.json();
@@ -232,29 +242,28 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data && data.id_comentario) {
                 showMessageModal('Éxito', '¡Tu testimonio ha sido enviado con éxito!');
                 seccionTestimonioDiv.style.display = 'none';
-                addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones'; 
+                addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones';
                 console.log('enviado:', testimonialData);
                 testimonialForm.reset();
                 testimonialForm.classList.remove('was-validated');
             } else {
                 showMessageModal('Error', 'No se pudo enviar el testimonio. Inténtalo de nuevo.');
-                
             }
         })
         .catch(error => {
             console.error('Error al enviar el testimonio:', error);
             showMessageModal('Error', error.message || 'Error de conexión al enviar el testimonio.');
-            
         });
     });
 
+    // Evento del botón para leer testimonios
     testimonioOpenButton.addEventListener('click', () => {
         if (mostrarComentariosDiv.style.display === 'block') {
             mostrarComentariosDiv.style.display = 'none';
             testimonioOpenButton.innerHTML = "Leer Testimonios";
             mostrarComentariosDiv.innerHTML = '';
         } else {
-            fetch(${BACKEND_URL}'/api/comentarios')
+            fetch(`${BACKEND_URL}/api/comentarios`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error al obtener los comentarios.');
