@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialForm = document.getElementById('testimonialForm');
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
     const BACKEND_URL = 'https://loscardoscdu.onrender.com';
+    const mainContentContainer = document.querySelector('.main_content_container');
 
     // Inicialización de carruseles de Bootstrap
     const carousels = document.querySelectorAll('.carousel');
@@ -185,10 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
     addCommentBtn.addEventListener('click', () => {
         if (seccionTestimonioDiv.style.display === 'none' || seccionTestimonioDiv.style.display === '') {
             seccionTestimonioDiv.style.display = 'block';
+            mainContentContainer.style.display = 'block';
             addCommentBtn.innerHTML = 'Cerrar Panel de Testimonio y Opiniones';
             testimonialComentaInput.value = '';
         } else {
             seccionTestimonioDiv.style.display = 'none';
+            mainContentContainer.style.display = 'none';
             addCommentBtn.innerHTML = 'Agregar Testimonios y Opiniones';
         }
     });
