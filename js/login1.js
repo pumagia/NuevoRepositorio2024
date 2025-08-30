@@ -41,16 +41,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-if (irCalendarioBtn && inicioDeTodo) {
-           irCalendarioBtn.addEventListener('click', (event) => {
-            event.preventDefault();
-            showLoginForm();
-            inicioDeTodo.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
+
+irCalendarioBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    showLoginForm();
+    const inicio = document.getElementById('iniciodetodo');
+    if (inicio) {
+        inicio.scrollIntoView({ behavior: 'smooth' });
     }
+});
+
+// if (irCalendarioBtn && inicioDeTodo) {
+//          irCalendarioBtn.addEventListener('click', (event) => {
+//            event.preventDefault();
+//            showLoginForm();
+//            inicioDeTodo.scrollIntoView({
+//                behavior: 'smooth',
+//                block: 'start'
+//            });
+//        });
+//    }
 
 
 
