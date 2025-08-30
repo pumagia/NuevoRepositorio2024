@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const BACKEND_URL = 'https://loscardoscdu.onrender.com';
     const mainContentContainer = document.querySelector('.main_content_container');
     const irCalendarioBtn = document.getElementById('ircalendario');
+    const inicioDeTodo = document.getElementById('iniciodetodo');
 
 
   
@@ -43,8 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
    if (irCalendarioBtn) {
         irCalendarioBtn.addEventListener('click', (event) => {
             event.preventDefault();
-           
             showLoginForm();
+            inicioDeTodo.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
     }
 
@@ -55,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         registerForm.hidden = true;
         authContainer.hidden = false;
         loginFormForm.reset();
-        window.scrollTo(0, 0); 
+        
     };
 
     
