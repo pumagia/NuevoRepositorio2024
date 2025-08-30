@@ -207,9 +207,11 @@
                         <label for="register-dni" class="form-label text-white">DNI</label>
                         <input type="text" id="register-dni" name="register-dni" required
                                class="form-control rounded-3 shadow-sm text-center"
-                               placeholder="Tu DNI">
+                               placeholder="Tu DNI"
+                               pattern="[0-9]{8}" 
+                               title="El DNI debe contener solo números (ej. 12345678)">
                         <div class="invalid-feedback">
-                            Por favor, ingresa tu DNI.
+                            Por favor, ingresa un DNI válido (solo números).
                         </div>
                     </div>
 
@@ -684,6 +686,7 @@
         <div class="text-center">
             
             <button id="ircalendario" class="btn btn-outline-secondary rounded-pill px-4 py-2">Ver Calendario</button>
+            
            
         </div>
     </section>
