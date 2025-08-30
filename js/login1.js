@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 showMessageModal('Éxito',  '¡Inicio de sesión exitoso!');
                 localStorage.setItem('jwtToken', jwt);
                 localStorage.setItem('userId', id_usuario);
-                mainContentContainer.style.display = 'block';
+                mainContentContainer.style.display = 'flex';
                 showLoggedInSection(); 
             } else {
                 showMessageModal('Error',  'Inicio de sesión fallido. Por favor, revisa tus credenciales.');
