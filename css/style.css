@@ -158,7 +158,7 @@ body {
 /* Nuevo contenedor principal para centrar las tarjetas */
 /* ==================================== */
 .main_content_container {
-    display: flex;
+    display: none;
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
@@ -357,9 +357,4 @@ body {
     .hero-section p {
         font-size: 1rem;
     }
-}
-.main_content_container {
-justify-content: center;
-    align-items: center;
-
 }
