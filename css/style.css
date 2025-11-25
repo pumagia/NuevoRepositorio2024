@@ -342,6 +342,19 @@ h3 {
     height: 95%;
 }
 
+.cvideo {
+    position: relative;
+    width: 100%; 
+    padding-bottom: 56.25%;
+    height: 0;
+    content_vidibility: visible;
+    contain: layout;
+}
+
+.cvideo > iframe {
+    
+    height: 100%;
+}
 
 .footer {
     background-color: var(--color-black-footer);
