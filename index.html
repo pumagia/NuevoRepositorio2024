@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOS CARDOS CdelU </title>
+    <title>LOS CARDOS</title>
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 
@@ -17,7 +19,7 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div   class="container-fluid">
        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -26,57 +28,74 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link btn-secondary active" aria-current="page" href="#">Inicio</a>
+
+
+              <!--    <a href="#inicio"><img src="fotos/logo/logo_sinfondo.png" alt="logo - Los Cardos - Concepción del Uruguay" class="h-10 w-10" style="left: 5px; width: 10%; height: auto;" ></a>-->
+             <li class="nav-item"> 
+                    <a class="btn nav-link btn-secondary " aria-current="page" href="#iniciode">Portada</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link btn-secondary" href="#Donde-estoy">¿Dónde estoy?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-secondary" href="#nuestra-casa">Nuestra Casa</a>
-                </li>
+               <li class="nav-item dropdown">
+                    <a class="btn nav-link btn-secondary dropdown-toggle" href="#" id="navbarDropdownDestino" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Inicia tu aventura
+                    </a>
 
+                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownDestino">
+                                   <li>
+                                 <a class="dropdown-item" href="#Donde-estoy">Nuestra Ubicación</a>
+                                  </li>
+                                   <li >
+                                   <a class="dropdown-item" href="#nuestraCasa">Galeria de imágenes</a>
+                                  </li>
+
+                                  <li >
+                                   <a class="dropdown-item" href="#region">Atracciones turísticas</a>
+                                  </li>
+                            </ul>
+                      </li>
+
+
+                       <li class="nav-item dropdown">
+                    <a class="btn nav-link btn-secondary dropdown-toggle" href="#" id="navbarDropdownDestino" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mesa de ayuda
+                    </a>
+
+                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownDestino">
+                                   <li>
+                                 <a class="dropdown-item" href="#faq">Preguntas Frecuentes</a>
+                                  </li>
+                                  <li >
+                                   <a class="dropdown-item" href="#testimonios">Testimonios</a>
+                                  </li>
+
+                                  <li >
+                                   <a class="dropdown-item" href="#contacto">Contacto</a>
+                                  </li>
+                            </ul>
+                      </li>
+
+              
+             <!--   <li class="nav-item">
+                    <a  class="nav-link btn btn-secondary"  id="openAuthModal">  Reservar  </a>
+                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link btn-secondary" href="#calendario">Calendario de Disponibilidad</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-secondary" href="#region">Qué Hacer en la Región</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-secondary" href="#faq">Preguntas Frecuentes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-secondary" href="#testimonios">Testimonios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-secondary" href="#contacto">Contacto</a>
-                </li>
-                <li class="nav-item">
-                   
-                    <button class="nav-link btn btn-secondary ms-lg-2" href="#" id="openAuthModal"
-                            >Login / Registro
-                    </button>
+                    <a href="https://www.booking.com/Share-WfT4M9" class="nav-link btn btn-secondary" id="reserve_link">
+                        Reservar
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-
 <header class="hero-section">
-    <div  id="iniciodetodo"  class="container">
-        <h1>LOS CARDOS CdelU</h1>
-        <p class="lead">
-            Tu escapada perfecta a la tranquilidad del entorno rural, cerca de Concepción del Uruguay, Colón y
-            Gualeguaychú.
-        </p>
-       
-        <section id="formRL">
+
+   <!--  login/registro style="display:none"  -->
+      <section id="formRL" style="display: none;" >
 
             
             <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="messageModalLabel"></h5>
@@ -93,9 +112,9 @@
 
 
 
- <div class="main_content_container" ;>
+         <div class="main_content_container">
            
-            <div id="SeccioTestimonio" style="display:none";>
+            <div id="SeccioTestimonio" style="display:none">
                 <div class="user-card">
                 <div class="card-body p-4">
                     <form id="testimonialForm" class="needs-validation" novalidate>
@@ -134,12 +153,12 @@
 
             </div>
 
-  </div>
+          </div>
 
 
 
             
-            <div id="authContainer" class="form-container w-100 p-4 p-md-5 rounded-3 shadow-lg" style="background-color: #a0a0a0;" hidden>
+            <div id="authContainer" class="form-container w-100 p-4 p-md-5 rounded-3 shadow-lg bg-opacity-10"  hidden>
 
                 
                 <form id="loginForm" action="#" method="post" class="needs-validation" hidden>
@@ -263,13 +282,130 @@
                 </form>
             </div>
             <br>
-           
-
-
-           
+            <br>
+                     
         </section>
 
-        <div class="carousel-container ">
+        <!--  fin login/registro <img src="/fotos/logo/logo.jpg" class="shadow d-block w-100 rounded-3"> -->
+
+
+
+
+
+
+
+                    <div id="iniciode">
+                    
+                         <img id="iniciodeimagen"src="/fotos/logo/logo2.jpg" class="shadow d-block w-100 iniciodeimagen">
+                    
+                    </div>
+
+   
+     <div  id="iniciodetodo"  class="container">
+
+       
+
+
+
+        <br>
+        <h1 class="text-center section-title" >
+            Tu escapada perfecta a la tranquilidad del entorno rural, cerca de: 
+        </h1>
+       
+       
+<div id="mesaayuda1" class="row g-5 justify-content-center ">
+          <section id="region" class="py-5  rounded-3">
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+
+                    <iframe width="auto" height="auto"
+                            src="https://www.youtube.com/embed/Rwp_gHtGgK4?si=aoGC3CmnKWby6wrX"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h3 class="card-title">Concepción del Uruguay</h3>
+                        <p class="card-text" style="text-align:justify; padding: 10px;">Explora el Palacio San José, la Basílica Inmaculada Concepción y las hermosas playas del río Uruguay.</p>
+                        <a href="https://concepcionentrerios.tur.ar/" class="btn btn-lg btn-link btn-outline-secondary ">Más info</a>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <iframe width="auto" height="auto"
+                            src="https://www.youtube.com/embed/Rk9TwCcIaIY?si=99jY11F8WdvBArkz"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h3 class="card-title">Colón</h3>
+                        <p class="card-text" style="text-align:justify; padding: 10px;"> Relájate en las Termas de Colón, visita el Parque Nacional El Palmar y
+                            descubre su centro artesanal. </p>
+                        <a href="https://www.colonturismo.tur.ar/" class="btn btn-lg btn-link btn-outline-secondary ">Más info</a>
+                  
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                   
+                    <iframe width="auto" height="auto"
+                            src="https://www.youtube.com/embed/AxN0TkorWFU?si=29gT40d51sZHRNfz"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    
+                    <div class="card-body">
+                        <h3 class="card-title">Gualeguaychú</h3>
+                        <p class="card-text" style="text-align:justify; padding: 10px;">Vive la magia del Carnaval del País, pasea por el Parque Unzu y disfruta de  su vibrante propuesta gastronómica.</p>
+                        <a href="https://gualeguaychu.tur.ar/" class="btn btn-lg btn-link  btn-outline-secondary">Más info</a>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+   
+</header>
+
+<div id="Donde-estoy" class="py-5 rounded-3">  <!--  section  -->
+   <!-- <img src="fotos/separador5b.png" class="img-fluid d-block mx-auto" style="width: 25%; height: auto; max-width: 25%;">-->
+    <h1 class="text-center letras-separadas"> Ubicación</h1>
+    <h3 class="text-center section-title"> -32.474473, -58.317068 </h3>
+    <div class="container">
+        <div id="mapa-responsive" class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-12">
+                <div class="mapa-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d402.93356729467797!2d-58.31707552621844!3d-32.47432098692351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sar!4v1754199110964!5m2!1ses-419!2sar"
+                            width="100" height="100" style="border:1px" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="mapa-responsive" class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-12">
+                <div class="mapa-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1754201420920!6m8!1m7!1s4oDftnKgbtbDEUllT1T_Vg!2m2!1d-32.47466763620407!2d-58.31702807894717!3f359.5013285964179!4f-7.232360419520674!5f0.7820865974627469"
+                            width="600" height="450" style="border:1px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div> <!--  /section  -->
+
+<!--      galeria de imagenes             
+<br>      
+<img src="fotos/separador55a.png" class="img-fluid d-block mx-auto" style="width: 25%; height: auto; max-width: 25%;">-->
+<h1 class="text-center section-title letras-separadas" style="font-weight: 900; "> Galeria de imágenes</h1>
+<br>
+     <div class="carousel-container justify-content-center">
             
             <div id="miCarruselp" class="carousel slide" data-bs-ride="carousel">
 
@@ -299,7 +435,7 @@
                         <img src="/fotos/patio/WhatsApp Image 2025-07-04 at 20.10.22.jpeg" class="d-block w-100"
                              alt="Segunda imagen del carrusel">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="text-justify"> Sumérgete en la tranquilidad de Los Cardos CdelU, tu casa de campo
+                            <h5 class="text-justify"> Sumérgete en la tranquilidad de Los Cardos, tu casa de campo
                                 en Concepción del Uruguay, Entre Ríos. Aquí, el diseño moderno se fusiona con la
                                 serenidad del entorno rural para ofrecerte una experiencia única.</h5>
                             <p class="text-justify"> Disfruta de nuestra piscina y relájate en un parque de 1.500 metros
@@ -342,469 +478,329 @@
 
 
         </div>
-        <br>
-       
-        <a href="#calendario" class="btn btn-secondary btn-lg rounded-pill px-4 py-2">Reservar Ahora</a>
-     
-</header>
-
-
-
-
-<section id="Donde-estoy" class="py-5 bg-light rounded-3">
-    <h2 class="text-center section-title">¿Dónde estoy?</h2>
-    <p class="text-center section-title"> -32.474473, -58.317068 </p>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-12">
-                <div class="mapa-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d402.93356729467797!2d-58.31707552621844!3d-32.47432098692351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sar!4v1754199110964!5m2!1ses-419!2sar"
-                            width="auto" height="auto" style="border:1" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-12">
-                <div class="mapa-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1754201420920!6m8!1m7!1s4oDftnKgbtbDEUllT1T_Vg!2m2!1d-32.47466763620407!2d-58.31702807894717!3f359.5013285964179!4f-7.232360419520674!5f0.7820865974627469"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <main class="container">
-  
-    <section id="nuestra-casa" class="py-5">
-        <h2 class="text-center section-title">Nuestra Casa</h2>
-        <div class="row g-4">
+ <div id="mesaayuda">
+    <section id="nuestraCasa" class="py-5">
+        
+        <div class="row g-4 justify-content-center">
 
-           
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100">
-                 
                     <div class="carousel-container">
-                      
                         <div id="miCarrusel1" class="carousel slide" data-bs-ride="carousel">
-
-                           
                             <div class="carousel-indicators">
-                              
                                 <button type="button" data-bs-target="#miCarrusel1" data-bs-slide-to="0" class="active"
-                                        aria-current="true" aria-label="Diapositiva 1"></button>
+                                    aria-current="true" aria-label="Diapositiva 1"></button>
                                 <button type="button" data-bs-target="#miCarrusel1" data-bs-slide-to="1"
-                                        aria-label="Diapositiva 2"></button>
+                                    aria-label="Diapositiva 2"></button>
                                 <button type="button" data-bs-target="#miCarrusel1" data-bs-slide-to="2"
-                                        aria-label="Diapositiva 3"></button>
+                                    aria-label="Diapositiva 3"></button>
                                 <button type="button" data-bs-target="#miCarrusel1" data-bs-slide-to="3"
-                                        aria-label="Diapositiva 4"></button>
+                                    aria-label="Diapositiva 4"></button>
                             </div>
-
                             <div class="carousel-inner">
-
-                              
                                 <div class="carousel-item active">
-                                  
                                     <img src="/fotos/comedor.jpeg" class="d-block w-100"
-                                         alt="Primera imagen del carrusel">
-                              
+                                        alt="Primera imagen del carrusel">
                                 </div>
-
-                               
                                 <div class="carousel-item">
                                     <img src="/fotos/cocina.jpeg" class="d-block w-100"
-                                         alt="Segunda imagen del carrusel">
-
+                                        alt="Segunda imagen del carrusel">
                                 </div>
-
-                           
                                 <div class="carousel-item">
                                     <img src="/fotos/baño.jpeg" class="d-block w-100"
-                                         alt="Tercera imagen del carrusel">
-
+                                        alt="Tercera imagen del carrusel">
                                 </div>
-
-                            
                                 <div class="carousel-item">
                                     <img src="/fotos/baño1.jpeg" class="d-block w-100"
-                                         alt="Tercera imagen del carrusel">
-
+                                        alt="Cuarta imagen del carrusel">
                                 </div>
-
                             </div>
-                          
                             <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel1"
-                                    data-bs-slide="prev">
+                                data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Anterior</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel1"
-                                    data-bs-slide="next">
+                                data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Siguiente</span>
                             </button>
-
-                        </div> 
-
+                        </div>
                     </div>
-
-
                     <div class="card-body">
-                        <h5 class="card-title">Espacios Acogedores</h5>
+                        <h3 class="card-title">Espacios acogedores</h3>
                         <p class="card-text">Amplia habitacion, baño moderno y una cocina equipada para tu
                             comodidad.</p>
                     </div>
-
                 </div>
-
             </div>
 
 
-           
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100">
-                
                     <div class="carousel-container">
-                   
                         <div id="miCarrusel2" class="carousel slide" data-bs-ride="carousel">
-
-                      
                             <div class="carousel-indicators">
-                             
                                 <button type="button" data-bs-target="#miCarrusel2" data-bs-slide-to="0" class="active"
-                                        aria-current="true" aria-label="Diapositiva 1"></button>
+                                    aria-current="true" aria-label="Diapositiva 1"></button>
                                 <button type="button" data-bs-target="#miCarrusel2" data-bs-slide-to="1"
-                                        aria-label="Diapositiva 2"></button>
-                                <button type="button" data-bs-target="#miCarrusel2" data-bs-slide-to="2"
-                                        aria-label="Diapositiva 3"></button>
-                             
+                                    aria-label="Diapositiva 2"></button>
                             </div>
-
-                         
                             <div class="carousel-inner">
-
                                 <div class="carousel-item active">
-                                
                                     <img src="/fotos/pileta/WhatsApp%20Image%202025-07-04%20at%2020.11.36.jpeg"
-                                         class="d-block w-100" alt="Primera imagen del carrusel">
-                                    <div class="carousel-caption d-none d-md-block">
-                                    
-                                    </div>
+                                        class="d-block w-100" alt="Primera imagen del carrusel">
                                 </div>
-
-                           
-                                <div class="carousel-item">
-                                    <img src="/fotos/pileta/WhatsApp Image 2025-07-04 at 20.12.24.jpeg"
-                                         class="d-block w-100" alt="Segunda imagen del carrusel">
-
-                                </div>
-
                                 <div class="carousel-item">
                                     <img src="/fotos/pileta/WhatsApp Image 2025-07-04 at 20.13.03.jpeg"
-                                         class="d-block w-100" alt="Tercera imagen del carrusel">
-
+                                        class="d-block w-100" alt="Tercera imagen del carrusel">
                                 </div>
-
-                           
-                             
-
                             </div>
-                          
                             <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel2"
-                                    data-bs-slide="prev">
+                                data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Anterior</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel2"
-                                    data-bs-slide="next">
+                                data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Siguiente</span>
                             </button>
-
-                        </div> 
-
+                        </div>
                     </div>
-
-
                     <div class="card-body">
-                        <h5 class="card-title">Jardín y Piscina</h5>
+                        <h3 class="card-title">Jardín y piscina</h3>
                         <p class="card-text">Disfruta de un extenso jardín con piscina y parrilla para tus momentos al
                             aire libre.</p>
                     </div>
-
                 </div>
-
             </div>
 
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100">
-                
                     <div class="carousel-container">
-                    
                         <div id="miCarrusel3" class="carousel slide" data-bs-ride="carousel">
-
-                       
                             <div class="carousel-indicators">
-                            
                                 <button type="button" data-bs-target="#miCarrusel3" data-bs-slide-to="0" class="active"
-                                        aria-current="true" aria-label="Diapositiva 1"></button>
+                                    aria-current="true" aria-label="Diapositiva 1"></button>
                                 <button type="button" data-bs-target="#miCarrusel3" data-bs-slide-to="1"
-                                        aria-label="Diapositiva 2"></button>
+                                    aria-label="Diapositiva 2"></button>
                                 <button type="button" data-bs-target="#miCarrusel3" data-bs-slide-to="2"
-                                        aria-label="Diapositiva 3"></button>
+                                    aria-label="Diapositiva 3"></button>
                                 <button type="button" data-bs-target="#miCarrusel3" data-bs-slide-to="3"
-                                        aria-label="Diapositiva 4"></button>
+                                    aria-label="Diapositiva 4"></button>
                             </div>
-
-                        
                             <div class="carousel-inner">
-
-                             
                                 <div class="carousel-item active">
-                                  
                                     <img src="/fotos/habitacion/WhatsApp Image 2025-07-04 at 20.08.50.jpeg"
-                                         class="d-block w-100" alt="Primera imagen del carrusel">
-                                    <div class="carousel-caption d-none d-md-block">
-                                    
-                                    </div>
+                                        class="d-block w-100" alt="Primera imagen del carrusel">
                                 </div>
-
-                             
                                 <div class="carousel-item">
                                     <img src="/fotos/habitacion/WhatsApp Image 2025-07-04 at 20.09.10.jpeg"
-                                         class="d-block w-100" alt="Segunda imagen del carrusel">
-
+                                        class="d-block w-100" alt="Segunda imagen del carrusel">
                                 </div>
-
-                           
                                 <div class="carousel-item">
                                     <img src="/fotos/habitacion/WhatsApp Image 2025-07-04 at 20.09.30.jpeg"
-                                         class="d-block w-100" alt="Tercera imagen del carrusel">
-
+                                        class="d-block w-100" alt="Tercera imagen del carrusel">
                                 </div>
-
-                           
                                 <div class="carousel-item">
                                     <img src="/fotos/habitacion/WhatsApp Image 2025-07-04 at 20.09.52.jpeg"
-                                         class="d-block w-100" alt="Tercera imagen del carrusel">
-
+                                        class="d-block w-100" alt="Cuarta imagen del carrusel">
                                 </div>
-
                             </div>
-                         
                             <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel3"
-                                    data-bs-slide="prev">
+                                data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Anterior</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel3"
-                                    data-bs-slide="next">
+                                data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Siguiente</span>
                             </button>
-
-                        </div> 
-
+                        </div>
                     </div>
-
                     <div class="card-body">
-                        <h5 class="card-title">Conexión con la Naturaleza</h5>
+                        <h3 class="card-title">Conexión con la naturaleza</h3>
                         <p class="card-text">Un entorno de paz y tranquilidad para desconectar de la rutina y recargar
                             energías.</p>
                     </div>
                 </div>
-
             </div>
 
 
         </div>
     </section>
+    
+</div>
 
-    <section id="region" class="py-5 bg-light rounded-3">
-        <h2 class="text-center section-title">Qué Hacer en la Región?</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
+ 
+
+<div id="mesaayuda2" class="seccion-content " style="padding-top: 40px;">
+
+
+    <div class="container">
+        
+       
+        
+       
+        <div class="row g-5 justify-content-center">
+
+         
+            <div class="col-12 col-md-6">
                 <div class="card h-100">
+                    <section id="faq" class="py-5 rounded-3">
+                        <div id="mi_carrusel_faq" class="carousel slide" data-bs-ride="carousel">
+                            
+                            
+                            <div id="fa2">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <h4 class="fst-italic fw-bolder">¿Hola reciben mascotas?</h4>
+                                        <br>
+                                        <p> -Hola por política de la casa no recibimos mascotas.</p>
+                                        <br>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h4 class="fst-italic fw-bolder">¿Hola, la casa cuenta con todo lo necesario para cocinar en el lugar?</h4>
+                                        <br>
+                                        <p> -Hola, sí, la casa tiene todos los utensilios y cubiertos necesarios para cocinar en el lugar.</p>
+                                        <br>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h4 class="fst-italic fw-bolder">¿Hola, consulto, tengo que llevar ropa de cama?</h4>
+                                        <br>
+                                        <p> -Hola, nosotros proporcionamos ropa de cama y toallas...</p>
+                                        <br>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h4 class="fst-italic fw-bolder">Hola...¿la casa cuenta con aire acondicionado?</h4>
+                                        <br>
+                                        <p> -Hola, la casa cuenta con aire acondicionado frío/calor...</p>
+                                        <br>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h4 class="fst-italic fw-bolder">Hola ¿tiene wi fi libre?</h4>
+                                        <br>
+                                        <p> -Hola, sí, contamos con wi fi tanto dentro como en el parque...</p>
+                                        <br>
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                           
+                            <div class="card-body">
+                                <h1 class="card-title text-center ">Preguntas frecuentes</h1>
+                                <p class="card-text text-center">Encuentra respuestas a tus dudas más comunes.</p>
+                            </div>
 
-                    <iframe width="auto" height="auto"
-                            src="https://www.youtube.com/embed/Rwp_gHtGgK4?si=aoGC3CmnKWby6wrX"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">Concepción del Uruguay</h5>
-                        <p class="card-text">Explora el Palacio San José, la Basílica Inmaculada Concepció y las
-                            hermosas playas del río Uruguay.</p>
-                        <a href="https://concepcionentrerios.tur.ar/" class="btn btn-link text-secondary">Más info</a>
-                    
-                    </div>
+                        </div> 
+                    </section>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            
+            <div class="col-12 col-md-6">
                 <div class="card h-100">
-                    <iframe width="auto" height="auto"
-                            src="https://www.youtube.com/embed/Rk9TwCcIaIY?si=99jY11F8WdvBArkz"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">Colón</h5>
-                        <p class="card-text">Relájate en las Termas de Colón, visita el Parque Nacional El Palmar y
-                            descubre su centro artesanal.</p>
-                        <a href="https://www.colonturismo.tur.ar/" class="btn btn-link text-secondary">Más info</a>
-                  
-                    </div>
+                    <section id="testimonios" class="py-5">
+                        <div id="mi_carrusel_testi" class="carousel slide" data-bs-ride="carousel">
+                            
+                           
+                            <div class="card-body">
+                                <h1 class="card-title text-center">Testimonios</h1>
+                                <br>
+                                <p class="card-text text-center">Lo que nuestros huéspedes dicen de su experiencia.</p>
+                            </div>
+                            <br>
+                            <br>
+
+                            
+                            <div id="testimoniosdiv">
+                                <div id="mostrarcomentarios" style="display:block;" class="carousel-inner"> 
+                                    <div class="carousel-item active">
+                                        <h4 class="fst-italic fw-bolder" >" Gabriel "</h4>
+                                        <br>
+                                        <p> -"La casita es ideal para alejarse del ruido de la ciudad ya que está en una zona muy tranquila."</p>
+                                        <br>
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <h4 class="fst-italic fw-bolder">" Erica "</h4>
+                                        <br>
+                                        <p> -"Excelente para purificar la mente. La paz y la serenidad de la zona superaron mis expectativas."</p>
+                                        <br>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <a id="testimonio_open"></a>
+                                </div>
+                            </div>
+                        </div>        
+                    </section>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <iframe width="auto" height="auto"
-                            src="https://www.youtube.com/embed/AxN0TkorWFU?si=29gT40d51sZHRNfz"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="card-body">
-                        <h5 class="card-title">Gualeguaychú</h5>
-                        <p class="card-text">Vive la magia del Carnaval del País, pasea por el Parque Unzu y disfruta de
-                            su vibrante propuesta gastronómica.</p>
-                        <a href="https://gualeguaychu.tur.ar/" class="btn btn-link text-secondary">Más info</a>
-                     
-                    </div>
-                </div>
-            </div>
+                       
         </div>
-    </section>
-
-    <section id="calendario" class="py-5">
-        <h2 class="text-center section-title">Calendario de Disponibilidad</h2>
-        <p class="text-center">calendario interactivo de reservas (requiere registro).</p>
-        <div class="text-center">
-            
-            <button id="ircalendario" class="btn btn-outline-secondary rounded-pill px-4 py-2">Ver Calendario</button>
-            
-           
-        </div>
-    </section>
-
-    <section id="faq" class="py-5 bg-light rounded-3">
-        <h2 class="text-center section-title">Preguntas Frecuentes (FAQ)</h2>
-        <p class="text-center">Encuentra respuestas a tus dudas más comunes sobre la casa y las reservas.</p>
-        <div class="text-center">
-
-            <div id="faqtxt"></div>
-
-
-            <button id="faqboton" type="button" onclick="agregarpreguntas()"
-                    class="btn btn-outline-secondary rounded-pill px-4 py-2">Ir a FAQ
-            </button> 
-        </div>
-    </section>
-
-    <section id="testimonios" class="py-5">
-        <h2 class="text-center section-title">Testimonios y Opiniones</h2>
-        <h5 class="text-center">Lo que nuestros huéspedes dicen de su experiencia.</h5>
-        <div id="mostrarcomentarios" class="text-center py-5 bg-light rounded-3" style="display: none;">       </div>
-        <div id="agregarcomentarios" style="display: none;"></div>
-        <div class="text-center">
-            <button  id="testimonio_open"  class="btn btn-outline-secondary rounded-pill px-4 py-2">Leer Testimonios</button>
-            
-        </div>
-    </section>
+    </div>
+    
+</section>
 
 </main>
-<footer id="contacto" class="footer text-center">
-    <div class="container">
-        <p>&copy; 2025 LOS CARDOS CdelU. Todos los derechos reservados.</p>
-        <p>Contacto: <a href="mailto:hadrianjacquet@gmail.com">hadrianjacquet@gmail.com</a>
-        </p>
+
+
+<footer id="contacto" class="footer text-center" style="width: 100%;">
+    <div class="container-fluid">
+      <!--  <p class="text-center">&copy; 2025 LOS CARDOS Concepción del Uruguay. </p> -->
        
+
+        <img src="/fotos/logo/logosinfondo.png" alt="Descripción de la imagen" style="width: 25%; height: auto;">
+
+ <p class="text-center">Contacto: <a href="mailto:hadrianjacquet@gmail.com" style="color: aliceblue;">hadrianjacquet@gmail.com</a> </p>
+
         <div>
             <a href="https://www.instagram.com/los_cardos_cdelu/" target="_blank" class="text-white mx-2" aria-label="Instagram de Los Cardos">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
                     <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.269.088 3.85.048 4.703.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.509.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.297-.048c.852-.04 1.433-.174 1.942-.372.526-.205.972-.478 1.417-.923.445-.444.719-.89.923-1.416.198-.509.333-1.09.372-1.942.04-1.172.04-1.444.04-3.297 0-2.172-.01-2.444-.048-3.297-.04-.852-.174-1.433-.372-1.942A3.917 3.917 0 0 0 13.583.923 3.927 3.927 0 0 0 10.83.42c-.509-.198-1.09-.333-1.942-.372C8.444.01 8.172 0 8 0zM8 1.5c2.16 0 2.414.01 3.248.047.82.038 1.147.112 1.465.232a2.57 2.57 0 0 1 .916.676c.345.345.618.672.676.916.12.318.194.645.232 1.465.037.834.047 1.086.047 3.25s-.01 2.414-.047 3.248c-.038.82-.112 1.147-.232 1.465a2.57 2.57 0 0 1-.676.916c-.345.345-.672.618-.916.676-.318.12-.645.194-1.465.232-.834.037-1.086.047-3.25.047s-2.414-.01-3.248-.047c-.82-.038-1.147-.112-1.465-.232a2.57 2.57 0 0 1-.916-.676 2.57 2.57 0 0 1-.676-.916c-.12-.318-.194-.645-.232-1.465C1.51 10.414 1.5 10.16 1.5 8s.01-2.414.047-3.248c.038-.82.112-1.147.232-1.465a2.57 2.57 0 0 1 .676-.916A2.57 2.57 0 0 1 2.76 2.047c.318-.12.645-.194 1.465-.232C5.586 1.51 5.84 1.5 8 1.5z"/>
                     <path d="M8 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm0 1a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/>
                     <path d="M11.5 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0 2z"/>
                 </svg>
             </a>
-            <a href="https://www.facebook.com/share/1CFBr9fyXU/" target="_blank" class="text-white mx-2" aria-label="Página de Facebook de Los Cardos">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.423V16c3.67- .642 6.33-3.955 6.33-7.951z"/>
+            <a  href="https://www.facebook.com/share/1CFBr9fyXU/" target="_blank" class="text-white mx-2" aria-label="Página de Facebook de Los Cardos">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
                 </svg>
             </a>
             <a href="https://wa.me/5493442488059" target="_blank" class="text-white mx-2" aria-label="Chatear con Los Cardos en WhatsApp">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                     <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                 </svg>
             </a>
         </div>
         <br>
-         <p> ____________________________________________ </p>
+         <p class="text-center"> ____________________________________________ </p>
          <br>
-         <p> Desarrollo Web - Alba Labalta Gabriel - 2025.
+         <p class="text-center"> Desarrollo Web - Alba Labalta Gabriel - 2025.
         </p>
     </div>
 </footer>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+-->
 <script src="/js/login1.js"></script>
-<script>
 
-
- 
-let paso = 0; // 0 = preguntas ocultas, 1 = preguntas visibles
-
-function agregarpreguntas() {
-  
-  const elemento = document.getElementById("faqtxt");
-  const elemento2 = document.getElementById("faqboton");
-  const elementonuevo = document.createElement("div"); 
-
-  
-  elementonuevo.innerHTML = `
-      <h4>¿Hola reciben mascotas?</h4>
-      <p>Hola por política de la casa no recibimos mascotas.</p>
-      <h4>¿Hola, la casa cuenta con todo lo necesario para cocinar en el lugar?</h4>
-      <p>Hola, sí, la casa tiene todos los utensilios y cubiertos necesarios para cocinar en el lugar.</p>
-      <h4>¿Hola, consulto, tengo que llevar ropa de cama?</h4>
-      <p>Hola, nosotros proporcionamos ropa de cama y toallas pero si gustas traer las tuyas, podés hacerlo.</p>
-      <h4>Hola...¿la casa cuenta con aire acondicionado?</h4>
-      <p>Hola, la casa cuenta con aire acondicionado frío/calor para hacer su estancia más agradable en cualquier época del año.</p>
-      <h4>Hola ¿tiene wi fi libre?</h4>
-      <p>Hola, sí, contamos con wi fi tanto dentro como en el parque de la casa, para que puedas estar conectado cada vez que lo desees o necesites.</p>
-  `;
-
-  
-  if (paso === 0) {
-      elemento.appendChild(elementonuevo);
-      paso = 1;
-      elemento2.innerHTML = "Regresar";
-  } else {
-      const divAgregado = elemento.querySelector("div");
-
-      
-      if (divAgregado) {
-          elemento.removeChild(divAgregado);
-      }
-
-      paso = 0;
-      elemento2.innerHTML = "Ir a FAQ";
-  }
-}
-        
-
-
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+    crossorigin="anonymous">
+</script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
+    
  
 </body>
 </html>

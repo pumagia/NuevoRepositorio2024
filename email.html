@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> LOS CARDOS - CONCEPCIÓN DEL URUGUAY</title>
+</head>
+
+<body style="background-color: rgba(250, 235, 215, 0.938); ">
+    <div  >
+
+    <div id="cuerpo" style="border: 0.1px;  border-style: double; padding: 5px; margin: 5px;">
+        
+       <H2 style=" text-align: center;font-family: Georgia, 'Times New Roman', Times, serif; font-size:xx-large; font-style:italic;  "> LOS CARDOS </H2>
+<H2 style=" text-align: center;font-family: Georgia, 'Times New Roman', Times, serif; font-size:xx-large; font-style:italic;  ">  CONCEPCIÓN DEL URUGUAY</H2>
+        <H2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Comprobante de reserva </H2>
+        
+        <p style="text-align: center; font-size: 20px;">Gracias por elegirnos. A continuación el detalle de su reserva.</p>
+        <br>
+        <hr>
+        <br>
+     <div id="tabla"style="padding-left: 15%;">
+      
+
+        <ul style="list-style: none; padding: 0; text-align: left;">
+            
+            <li style="margin-bottom: 10px; font-size: 17px;"><strong style="font-size: 17px;">Fecha "Check-in":</strong> <span th:text="${fechaInicial}"></span></li>
+            <li style="margin-bottom: 10px; font-size: 17px;"><strong style="font-size: 17px;">Fecha "Check-out":</strong> <span th:text="${fechaFinal}"></span></li>
+            <li style="margin-bottom: 10px; font-size: 17px;"><strong style="font-size: 17px;">Noches:</strong> <span th:text="${diferenciaDias}"></span></li>
+            <li style="margin-bottom: 10px; font-size: 17px;"><strong style="font-size: 17px;">Pr.Unit:</strong> $70,00 </li>
+            <li style="margin-bottom: 10px; font-size: 17px;"><strong style="font-size: 17px;">Pr.Total:</strong> $<span th:text="${ptotal}"></span></li>
+            <li style="margin-bottom: 10px; font-size: 17px;"><strong style="font-size: 17px;">Nombre del Huésped:</strong> <span th:text="${nombreCompleto}"></span></li>
+        </ul>
+      
+
+</div>
+
+<P style="font-size: 17px; text-align: justify;" >Está cotizado en dólares, el ingreso ("Check-in 14:00hs"), el egreso ("Check-out 11:00hs") </P>
+
+
+        <br>
+        <hr>
+        <br>
+        <p style="font-size: 16px;">Este correo es una notificación automática.</p>
+        <P style="font-size: 16px;" >Si deseas ponerte en contacto con nosotros, por favor envíanos un correo electrónico a la siguiente dirección:</P>
+        <P style="font-size: 17px;"><a href="hadrianjacquet@gmail.com"> hadrianjacquet@gmail.com </a></p>
+
+        </div>
+    </div>
+</body>
+</html>

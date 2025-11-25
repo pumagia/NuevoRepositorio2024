@@ -26,10 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const seccionTestimonioDiv = document.getElementById('SeccioTestimonio');
     const testimonialForm = document.getElementById('testimonialForm');
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
-    const BACKEND_URL = 'https://loscardoscdu.onrender.com';
+   // const BACKEND_URL = 'https://loscardoscdu.onrender.com'; 
+    const BACKEND_URL = 'http://localhost:8080';
     const mainContentContainer = document.querySelector('.main_content_container');
     const irCalendarioBtn = document.getElementById('ircalendario');
     const inicioDeTodo = document.getElementById('iniciodetodo');
+    const formRL = document.getElementById('formRL')
+   
 
 
   
@@ -37,30 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousels = document.querySelectorAll('.carousel');
     carousels.forEach(carousel => {
         new bootstrap.Carousel(carousel, {
-            interval: 3000
+            interval: 4000
         });
     });
 
 
-irCalendarioBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    showLoginForm();
-    const inicio = document.getElementById('iniciodetodo');
-    if (inicio) {
-        inicio.scrollIntoView({ behavior: 'smooth' });
-    }
-});
 
-// if (irCalendarioBtn && inicioDeTodo) {
-//          irCalendarioBtn.addEventListener('click', (event) => {
-//            event.preventDefault();
-//            showLoginForm();
-//            inicioDeTodo.scrollIntoView({
-//                behavior: 'smooth',
-//                block: 'start'
-//            });
-//        });
-//    }
 
 
 
@@ -86,11 +71,7 @@ irCalendarioBtn.addEventListener('click', (event) => {
         authContainer.hidden = true;
     };
 
-    /**
-     * Muestra un modal con un mensaje y un título.
-     * @param {string} title El título del modal.
-     * @param {string} message El texto del mensaje a mostrar.
-     */
+    
     const showMessageModal = (title, message) => {
         messageModalLabel.textContent = title;
         messageModalBody.textContent = message;
@@ -99,8 +80,10 @@ irCalendarioBtn.addEventListener('click', (event) => {
 
     
     const showLoggedInSection = () => {
+        
         hideAuthContainer();
-        openAuthButton.style.display = 'none'; 
+        openAuthButton.style.display = 'none';
+        
         loggedInSection.style.display = 'block'; 
         
     };
@@ -108,17 +91,28 @@ irCalendarioBtn.addEventListener('click', (event) => {
     
     const hideLoggedInSection = () => {
         loggedInSection.style.display = 'none';
-        openAuthButton.style.display = 'block'; 
+        
+        openAuthButton.style.display = 'block';
+       
     };
 
   
     openAuthButton.addEventListener('click', (event) => {
         event.preventDefault();
+
+        if (formRL.style.display === 'none')             {
+        formRL.style.display = 'block';
+        }else{
+            formRL.style.display = 'none';
+        }
+
         if (authContainer.hidden) {
             showLoginForm();
         } else {
             hideAuthContainer();
         }
+
+
     });
 
     showRegisterLink.addEventListener('click', (event) => {
@@ -163,12 +157,15 @@ irCalendarioBtn.addEventListener('click', (event) => {
         })
         .then(data => {
             console.log('Respuesta completa del servidor:', data);
-            const { message, jwt, status, id_usuario } = data;
+            const { message, jwt, status, id_usuario, nombreyapellido, email } = data;
 
             if (status === true) {
                 showMessageModal('Éxito',  '¡Inicio de sesión exitoso!');
                 localStorage.setItem('jwtToken', jwt);
                 localStorage.setItem('userId', id_usuario);
+                localStorage.setItem('user', nombreyapellido); 
+                localStorage.setItem('email', email); 
+                
                 mainContentContainer.style.display = 'flex';
                 showLoggedInSection(); 
             } else {
@@ -177,7 +174,7 @@ irCalendarioBtn.addEventListener('click', (event) => {
         })
         .catch(error => {
             console.error('Ha ocurrido un error durante la petición:', error);
-            showMessageModal('Error de Conexión',  'No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.');
+            showMessageModal('Error de Conexión',  'Verificar credenciales. Inténtalo de nuevo más tarde.');
         });
     });
 
@@ -239,20 +236,15 @@ irCalendarioBtn.addEventListener('click', (event) => {
 
     addCommentBtn.addEventListener('click', () => {
        
-        if(seccionTestimonioDiv.style.display === 'block' || seccionTestimonioDiv.style.display === ''){
-seccionTestimonioDiv.style.display = 'none';
-addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
-        }else{
+                if(seccionTestimonioDiv.style.display === 'block' || seccionTestimonioDiv.style.display === ''){
+        seccionTestimonioDiv.style.display = 'none';
+        addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
+                }else{
             seccionTestimonioDiv.style.display = 'block';
+       
             addCommentBtn.innerHTML = "Cerrar Panel de Testimonio y Opiniones";}
 
-      //  seccionTestimonioDiv.style.display = 'block';
-
-      //  mostrarComentariosDiv.style.display = 'none';
-
-       // if (testimonioOpenButton) {
-        //    testimonioOpenButton.innerHTML = "Regresar a comentarios";
-       // }
+     
     });
 
 
@@ -265,6 +257,9 @@ addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
         seccionTestimonioDiv.style.display = 'none';
         addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
         mainContentContainer.style.display = 'none';
+       
+        localStorage.clear();   
+        window.location.reload(true);
         showMessageModal('Cierre de Sesión', 'Has cerrado la sesión correctamente.');
     });
 
@@ -274,6 +269,7 @@ addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
 
         const token = localStorage.getItem('jwtToken');
         const userId = localStorage.getItem('userId');
+        const user = localStorage.getItem('user'); // 
 
         if (!token || !userId) {
             showMessageModal('Error de Autenticación', 'Por favor, inicia sesión para enviar un testimonio.');
@@ -288,7 +284,8 @@ addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
 
         const testimonialData = {
             comenta: testimonialComentaInput.value,
-            id_usuario: userId 
+            id_usuario: userId, 
+            nombreyapellido: user 
         };
 
         fetch(`${BACKEND_URL}/api/comentarios`, {
@@ -330,7 +327,7 @@ addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
     testimonioOpenButton.addEventListener('click', () => {
         if (mostrarComentariosDiv.style.display === 'block') {
             mostrarComentariosDiv.style.display = 'none';
-            testimonioOpenButton.innerHTML = "Leer Testimonios";
+           
             mostrarComentariosDiv.innerHTML = '';
         } else {
             fetch(`${BACKEND_URL}/api/comentarios`)
@@ -345,20 +342,36 @@ addCommentBtn.innerHTML = "Agregar Testimonio y opiniones";
                     mostrarComentariosDiv.innerHTML = '<p>No hay comentarios para mostrar.</p>';
                 } else {
                     const comentariosHTML = comentarios.map(comentario => `
-                        <div class="comentario">
-                            <p>${comentario.comenta}</p>
-                        </div>
+                        
+
+                             <div class="carousel-item"> 
+                                     <h4 class="fst-italic fw-bolder" style="text-align: center;">" ${comentario.nombreyapellido} "</h4>
+                                      <br>
+                                      <p style="text-align: center;"> -"${comentario.comenta}"</p>
+                                      <br>
+                              </div> 
+
+
+
+                            
+                        
                     `).join('');
-                    mostrarComentariosDiv.innerHTML = comentariosHTML;
-                    testimonioOpenButton.innerHTML = "Regresar";
+                    mostrarComentariosDiv.insertAdjacentHTML('beforeend', comentariosHTML);
+                 
                 }
                 mostrarComentariosDiv.style.display = 'block';
             })
             .catch(error => {
                 console.error('Error:', error);
-                mostrarComentariosDiv.innerHTML = `<p style="color: red;"> Fuera de Linea el Servidor </p>`;
+               
                 mostrarComentariosDiv.style.display = 'block';
             });
         }
     });
+
+  if (testimonioOpenButton) {
+       testimonioOpenButton.click();
+ }
+
+
 });
