@@ -1,3 +1,2 @@
 /*
-  # Establece la Politica de Seguridad de Contenido (CSP) para todas las rutas
-  Content-Security-Policy: frame-src https://www.youtube.com https://youtube.com https://www.google.com https://maps.googleapis.com;
+  Content-Security-Policy: frame-src https://www.youtube.com https://youtube.com https://www.google.com https://maps.googleapis.com; script-src 'self' https://www.youtube.com https://s.ytimg.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com; connect-src 'self' https://www.youtube.com https://s.ytimg.com https://maps.googleapis.com https://www.google.com https://www.gstatic.com;
