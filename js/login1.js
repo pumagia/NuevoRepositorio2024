@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const loginEmailInput = document.getElementById('loginEmail');
     const loginPasswordInput = document.getElementById('loginPassword');
-    const testimonioOpenButton = document.getElementById('testimonio_open');
-    const mostrarComentariosDiv = document.getElementById('mostrarcomentarios');
+    const registroConExito = document.getElementById('testimonio_open');
+    const loginEmailInput = document.getElementById('loginEmail');
 
    
     const loggedInSection = document.getElementById('loggedInSection');
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const seccionTestimonioDiv = document.getElementById('SeccioTestimonio');
     const testimonialForm = document.getElementById('testimonialForm');
     const testimonialComentaInput = document.getElementById('testimonial_comenta');
-   // const BACKEND_URL = 'https://loscardoscdu.onrender.com'; 
-    const BACKEND_URL = 'http://localhost:8080';
+   //const BACKEND_URL = 'https://loscardoscdu.onrender.com'; 
+    const BACKEND_URL = 'https://loscardoscdu.onrender.com';
     const mainContentContainer = document.querySelector('.main_content_container');
     const irCalendarioBtn = document.getElementById('ircalendario');
     const inicioDeTodo = document.getElementById('iniciodetodo');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const showLoggedInSection = () => {
         
         hideAuthContainer();
-        openAuthButton.style.display = 'none';
+        if (openAuthButton) { openAuthButton.style.display = 'none'; }
         
         loggedInSection.style.display = 'block'; 
         
@@ -92,28 +92,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const hideLoggedInSection = () => {
         loggedInSection.style.display = 'none';
         
-        openAuthButton.style.display = 'block';
+        if (openAuthButton) { openAuthButton.style.display = 'block'; }
        
     };
 
   
-    openAuthButton.addEventListener('click', (event) => {
-        event.preventDefault();
+    if (openAuthButton) {
+        openAuthButton.addEventListener('click', (event) => {
+            event.preventDefault();
 
-        if (formRL.style.display === 'none')             {
-        formRL.style.display = 'block';
-        }else{
-            formRL.style.display = 'none';
-        }
+            if (formRL.style.display === 'none')             {
+            formRL.style.display = 'block';
+            }else{
+                formRL.style.display = 'none';
+            }
 
-        if (authContainer.hidden) {
-            showLoginForm();
-        } else {
-            hideAuthContainer();
-        }
+            if (authContainer.hidden) {
+                showLoginForm();
+            } else {
+                hideAuthContainer();
+            }
 
 
-    });
+        });
+    }
 
     showRegisterLink.addEventListener('click', (event) => {
         event.preventDefault();
@@ -323,55 +325,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
  
-
-    testimonioOpenButton.addEventListener('click', () => {
-        if (mostrarComentariosDiv.style.display === 'block') {
-            mostrarComentariosDiv.style.display = 'none';
-           
-            mostrarComentariosDiv.innerHTML = '';
-        } else {
-            fetch(`${BACKEND_URL}/api/comentarios`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al obtener los comentarios.');
-                }
-                return response.json();
-            })
-            .then(comentarios => {
-                if (comentarios.length === 0) {
-                    mostrarComentariosDiv.innerHTML = '<p>No hay comentarios para mostrar.</p>';
-                } else {
-                    const comentariosHTML = comentarios.map(comentario => `
-                        
-
-                             <div class="carousel-item"> 
-                                     <h4 class="fst-italic fw-bolder" style="text-align: center;">" ${comentario.nombreyapellido} "</h4>
-                                      <br>
-                                      <p style="text-align: center;"> -"${comentario.comenta}"</p>
-                                      <br>
-                              </div> 
-
-
-
-                            
-                        
-                    `).join('');
-                    mostrarComentariosDiv.insertAdjacentHTML('beforeend', comentariosHTML);
-                 
-                }
-                mostrarComentariosDiv.style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-               
-                mostrarComentariosDiv.style.display = 'block';
-            });
-        }
-    });
-
-  if (testimonioOpenButton) {
-       testimonioOpenButton.click();
- }
-
 
 });

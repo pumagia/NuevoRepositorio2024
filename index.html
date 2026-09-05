@@ -32,11 +32,11 @@
 
               <!--    <a href="#inicio"><img src="fotos/logo/logo_sinfondo.png" alt="logo - Los Cardos - Concepción del Uruguay" class="h-10 w-10" style="left: 5px; width: 10%; height: auto;" ></a>-->
              <li class="nav-item"> 
-                    <a class="btn nav-link btn-secondary " aria-current="page" href="#iniciode">Portada</a>
+                    <a class="nav-link" aria-current="page" href="#iniciode">Portada</a>
                 </li>
 
                <li class="nav-item dropdown">
-                    <a class="btn nav-link btn-secondary dropdown-toggle" href="#" id="navbarDropdownDestino" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDestino" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Inicia tu aventura
                     </a>
 
@@ -56,13 +56,13 @@
 
 
                        <li class="nav-item dropdown">
-                    <a class="btn nav-link btn-secondary dropdown-toggle" href="#" id="navbarDropdownDestino" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDestino" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Mesa de ayuda
                     </a>
 
                              <ul class="dropdown-menu" aria-labelledby="navbarDropdownDestino">
                                    <li>
-                                 <a class="dropdown-item" href="#faq">Preguntas Frecuentes</a>
+                           <!--      <a class="dropdown-item" href="#faq">Preguntas Frecuentes</a>-->
                                   </li>
                                   <li >
                                    <a class="dropdown-item" href="#testimonios">Testimonios</a>
@@ -295,23 +295,24 @@
 
 
                     <div id="iniciode">
-                    
-                         <img id="iniciodeimagen"src="/fotos/logo/logo2.jpg" class="shadow d-block w-100 iniciodeimagen">
-                    
+                         <img id="iniciodeimagen" src="/fotos/logo/logo2.jpg" class="shadow d-block w-100 iniciodeimagen" alt="Cabaña Los Cardos en Concepción del Uruguay">
+                         <div class="hero-overlay"></div>
+                         <div class="hero-content">
+                             <span class="hero-badge">Los Cardos &middot; Concepción del Uruguay</span>
+                             <h1 class="hero-title">Tu escapada perfecta a la tranquilidad del entorno rural</h1>
+                             <p class="hero-subtitle">Cerca de las termas, el r&iacute;o Uruguay y el coraz&oacute;n hist&oacute;rico de Entre R&iacute;os.</p>
+                             <div class="hero-actions">
+                                 <a href="https://www.booking.com/Share-WfT4M9" class="btn btn-primary btn-hero">Reservar ahora</a>
+                                 <a href="#nuestraCasa" class="btn btn-hero-ghost">Ver la casa</a>
+                             </div>
+                         </div>
                     </div>
 
    
-     <div  id="iniciodetodo"  class="container">
-
-       
-
-
+<div  id="iniciodetodo"  class="container">
 
         <br>
-        <h1 class="text-center section-title" >
-            Tu escapada perfecta a la tranquilidad del entorno rural, cerca de: 
-        </h1>
-       
+        <br>
        
 <div id="mesaayuda1" class="row g-5 justify-content-center ">
           <section id="region" class="py-5  rounded-3">
@@ -373,10 +374,16 @@
    
 </header>
 
-<div id="Donde-estoy" class="py-5 rounded-3">  <!--  section  -->
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+        <span>Concepción del Uruguay</span><span>Colón</span><span>Gualeguaychú</span><span>Palacio San José</span><span>Termas</span><span>Río Uruguay</span>
+        <span>Concepción del Uruguay</span><span>Colón</span><span>Gualeguaychú</span><span>Palacio San José</span><span>Termas</span><span>Río Uruguay</span>
+    </div>
+</div>
+
+<div id="Donde-estoy" class="py-5 rounded-3">
    <!-- <img src="fotos/separador5b.png" class="img-fluid d-block mx-auto" style="width: 25%; height: auto; max-width: 25%;">-->
-    <h1 class="text-center letras-separadas"> Ubicación</h1>
-    <h3 class="text-center section-title"> -32.474473, -58.317068 </h3>
+    <p class="eyebrow eyebrow-lg">&iquest;D&oacute;nde estamos?</p>
     <div class="container">
         <div id="mapa-responsive" class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-12">
@@ -403,7 +410,7 @@
 <!--      galeria de imagenes             
 <br>      
 <img src="fotos/separador55a.png" class="img-fluid d-block mx-auto" style="width: 25%; height: auto; max-width: 25%;">-->
-<h1 class="text-center section-title letras-separadas" style="font-weight: 900; "> Galeria de imágenes</h1>
+<p class="eyebrow eyebrow-lg">La casa</p>
 <br>
      <div class="carousel-container justify-content-center">
             
@@ -655,9 +662,12 @@
                 <div class="card h-100">
                     <section id="faq" class="py-5 rounded-3">
                         <div id="mi_carrusel_faq" class="carousel slide" data-bs-ride="carousel">
-                            
+                            <p class="eyebrow">Mesa de ayuda</p>
+                            <br>
+                              <p class="card-text text-center">Encuentra respuestas a tus dudas más comunes.</p>
                             
                             <div id="fa2">
+                               
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <h4 class="fst-italic fw-bolder">¿Hola reciben mascotas?</h4>
@@ -694,8 +704,9 @@
                             
                            
                             <div class="card-body">
-                                <h1 class="card-title text-center ">Preguntas frecuentes</h1>
-                                <p class="card-text text-center">Encuentra respuestas a tus dudas más comunes.</p>
+                                
+                            <!--    <h1 class="card-title text-center ">Preguntas frecuentes</h1>-->
+                                
                             </div>
 
                         </div> 
@@ -711,7 +722,8 @@
                             
                            
                             <div class="card-body">
-                                <h1 class="card-title text-center">Testimonios</h1>
+                                <p class="eyebrow">Opiniones</p>
+                               <!-- <h1 class="card-title text-center">Testimonios</h1>-->
                                 <br>
                                 <p class="card-text text-center">Lo que nuestros huéspedes dicen de su experiencia.</p>
                             </div>
@@ -733,10 +745,18 @@
                                         <p> -"Excelente para purificar la mente. La paz y la serenidad de la zona superaron mis expectativas."</p>
                                         <br>
                                     </div>
-                                </div>
-
-                                <div class="text-center">
-                                    <a id="testimonio_open"></a>
+                                    <div class="carousel-item">
+                                        <h4 class="fst-italic fw-bolder">" Martín "</h4>
+                                        <br>
+                                        <p> -"La casa impecable y el parque enorme. Aprovechamos para ir a las termas y al Palacio San José, todo muy cerca."</p>
+                                        <br>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h4 class="fst-italic fw-bolder">" Lucía "</h4>
+                                        <br>
+                                        <p> -"Ideal para descansar en familia. La piscina, la parrilla y el entorno natural nos hicieron pasar unos días inolvidables."</p>
+                                        <br>
+                                    </div>
                                 </div>
                             </div>
                         </div>        
@@ -757,7 +777,7 @@
       <!--  <p class="text-center">&copy; 2025 LOS CARDOS Concepción del Uruguay. </p> -->
        
 
-        <img src="/fotos/logo/logosinfondo.png" alt="Descripción de la imagen" style="width: 25%; height: auto;">
+        <img src="/fotos/logo/logosinfondo.png" alt="Descripción de la imagen" style="width: 35%; height: auto;">
 
  <p class="text-center">Contacto: <a href="mailto:hadrianjacquet@gmail.com" style="color: aliceblue;">hadrianjacquet@gmail.com</a> </p>
 
@@ -784,7 +804,7 @@
         <br>
          <p class="text-center"> ____________________________________________ </p>
          <br>
-         <p class="text-center"> Desarrollo Web - Alba Labalta Gabriel - 2025.
+         <p class="text-center"> Desarrollo Web - Alba Labalta Gabriel - 2026.
         </p>
     </div>
 </footer>
@@ -800,7 +820,27 @@
     crossorigin="anonymous">
 </script> 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
-    
+<script>
+    (function () {
+        var sections = [].slice.call(document.querySelectorAll('#iniciode, #Donde-estoy, #region, #nuestraCasa, #faq, #testimonios, #contacto'));
+        function reveal(el) { el.classList.add('visible'); }
+        if (!('IntersectionObserver' in window)) {
+            sections.forEach(function (el) { el.classList.add('section-reveal'); reveal(el); });
+            return;
+        }
+        sections.forEach(function (el) { el.classList.add('section-reveal'); });
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    reveal(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        sections.forEach(function (el) { observer.observe(el); });
+    })();
+</script>
+
  
 </body>
 </html>
